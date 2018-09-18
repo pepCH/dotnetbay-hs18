@@ -32,6 +32,7 @@ The following products / tools are needed to contribute / fork.
 * Michael Schnyder
 * Martin Kropp
 * Daniel Pfulg
+* Pascal Peter
 
 ## License
 Licensed under the MIT License
