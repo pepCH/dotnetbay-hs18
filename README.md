@@ -33,6 +33,7 @@ The following products / tools are needed to contribute / fork.
 * Martin Kropp
 * Daniel Pfulg
 * Pascal Peter
+* Pascal Kamber
 
 ## License
 Licensed under the MIT License
