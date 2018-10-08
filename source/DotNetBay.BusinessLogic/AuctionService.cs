@@ -85,47 +85,47 @@ namespace DotNetBay.Core
         {
             if (auction == null)
             {
-                throw new ArgumentException("Auction cannot be null", "auction");
+                throw new ArgumentException("Auction cannot be null", nameof(auction));
             }
 
             if (auction.StartDateTimeUtc < DateTime.UtcNow)
             {
-                throw new ArgumentException("The start of the auction needs to be in the future", "auction");
+                throw new ArgumentException("The start of the auction needs to be in the future", nameof(auction));
             }
 
             if (auction.EndDateTimeUtc < DateTime.UtcNow)
             {
-                throw new ArgumentException("The end of the auction needs to be in the future", "auction");
+                throw new ArgumentException("The end of the auction needs to be in the future", nameof(auction));
             }
 
             if (auction.Bids != null && auction.Bids.Any())
             {
-                throw new ArgumentException("A new auction cannot have bids", "auction");
+                throw new ArgumentException("A new auction cannot have bids", nameof(auction));
             }
 
             if (auction.Seller == null)
             {
-                throw new ArgumentException("The Seller of an auction cannot be null", "auction");
+                throw new ArgumentException("The Seller of an auction cannot be null", nameof(auction));
             }
 
             if (this.memberService.GetByUniqueId(auction.Seller.UniqueId) == null)
             {
-                throw new ArgumentException("The seller cannot be cound and has to be created before using it in a auction", "auction");
+                throw new ArgumentException("The seller cannot be found and has to be created before using it in a auction", nameof(auction));
             }
 
             if (auction.Winner != null)
             {
-                throw new ArgumentException("The Winner of an auction cannot be known at the begin of an auction", "auction");
+                throw new ArgumentException("The Winner of an auction cannot be known at the begin of an auction", nameof(auction));
             }
 
             if (auction.StartPrice < 0)
             {
-                throw new ArgumentException("Negative startprices are not allowed", "auction");
+                throw new ArgumentException("Negative startprice is not allowed", nameof(auction));
             }
 
             if (string.IsNullOrEmpty(auction.Title))
             {
-                throw new ArgumentException("Every auction needs a title", "auction");
+                throw new ArgumentException("Every auction needs a title", nameof(auction));
             }
         }
     }

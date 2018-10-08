@@ -76,5 +76,9 @@ namespace DotNetBay.WPF
             }
         }
 
+        private void BidForAction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
